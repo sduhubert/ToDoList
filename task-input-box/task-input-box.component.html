@@ -1,0 +1,17 @@
+<div class="task-input-box">
+    <h2>Dynamic To-Do List</h2>
+    <input class="new-task" type="text" [(ngModel)]="newTask" (keydown)="onKeydown($event)" placeholder="Enter your task here..." autofocus>
+    <button class="add-button" (click)="addTask()">Add Task</button>
+</div>
+<br>
+<div class="task-output-box">
+    <h2>Current task list:</h2>
+    <div class="task-list" *ngFor="let task of tasks; let index = index;">
+        <ul>
+            <li>
+                {{task}} 
+                <button class="remove-button" (click)="removeTask(index)">Remove</button>
+            </li>
+        </ul>
+    </div>
+</div>
